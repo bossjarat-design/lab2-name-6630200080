@@ -1,4 +1,5 @@
-/* Reset ค่าพื้นฐาน */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,19 +12,34 @@ body {
   color: #333;
 }
 
+
 .app-container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* --- Navbar Styles --- */
+
 .navbar {
+  width: 100%;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  
+  display: flex;
+  justify-content: center;
+}
+
+
+.navbar-content {
+  width: 100%;
+  max-width: 1440px; 
+  padding: 15px 20px; 
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
-  margin-bottom: 20px;
 }
 
 .nav-left {
@@ -52,25 +68,28 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #333;
-  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
   letter-spacing: 0.5px;      
   padding: 0 15px;          
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
-
 .nav-links a:hover {
   color: #e07575;             
 }
+
+
 .nav-right {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
+
 .search-bar {
-  background-color: #fee2e2; /* สีชมพูอ่อนๆ */
+  background-color: #fee2e2;
   border-radius: 20px;
   padding: 5px 15px;
   display: flex;
@@ -82,8 +101,17 @@ body {
   border: none;
   background: transparent;
   outline: none;
-  width: 150px;
+  width: 317px; 
+  font-size: 16px;
+  color: #333;
 }
+
+.search-icon {
+  font-size: 20px;
+  color: #888;    
+  cursor: pointer;
+}
+
 
 .cart-btn {
   background: #ffffff;
@@ -92,117 +120,66 @@ body {
   height: 35px;
   border-radius: 50%;
   cursor: pointer;
-  display: flex !important;   /* ใช้ !important เพื่อป้องกันการโดนทับ */
-  justify-content: center;    /* กึ่งกลางแนวนอน */
-  align-items: center;        /* กึ่งกลางแนวตั้ง */
-
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   padding: 0; 
   margin: 0;
-  line-height: 0;             /* ป้องกันเรื่องระยะบรรทัดของตัวอักษร */
+  line-height: 0;
   overflow: hidden;
+  transition: background-color 0.2s;
+}
+
+.cart-btn:hover {
+  background-color: #fff0f0;
 }
 
 .cart-icon {
   color: #c51010;
-  display: block;             /* เปลี่ยนจาก inline เป็น block เพื่อให้คำนวณพื้นที่แม่นยำขึ้น */
-  font-size: 15px;            /* ลองปรับขนาดดู ถ้าไอคอนใหญ่ไปมันจะเบียดขอบจนดูไม่กลาง */
+  display: block;
+  font-size: 15px;
 }
+
 .profile-icon {
   width: 35px;
   height: 35px;
   background-color: black;
   border-radius: 50%;
+  cursor: pointer;
 }
 
-/* --- Hero Section Styles --- */
+
 .hero-section {
   position: relative;
   width: 100%;
   height: 400px;
-  background-color: #0f172a; /* พื้นหลังสีน้ำเงินเข้ม */
-  background-image: linear-gradient(90deg, #000000 0%, #1e293b 100%);
+  background-color: #0f172a;
   border-radius: 20px;
   overflow: hidden;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 0 60px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
-/* ทำภาพพื้นหลังแบบ Tech */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
+.hero-banner-link {
+  display: flex;
+  width: 100%;
   height: 100%;
-  background: url('https://images.unsplash.com/photo-1614728853970-bc2f41147cd2?q=80&w=1000&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.4;
-  mask-image: linear-gradient(to right, transparent, black);
-  -webkit-mask-image: linear-gradient(to right, transparent, black);
+  text-decoration: none;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+.hero-banner-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.hero-text-block h1 {
-  font-size: 64px;
-  line-height: 1;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
 
-.subtitle {
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-}
-
-.tagline {
-  font-size: 24px;
-  color: #38bdf8; /* สีฟ้าสว่าง */
-  font-weight: 600;
-  margin-bottom: 30px;
-  text-align: right; /* จัดชิดขวาเหมือนในรูป */
-  width: 100%;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.cta-button {
-  background: transparent;
-  color: white;
-  border: 2px solid #0ea5e9; /* ขอบสีฟ้า */
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #0ea5e9; /* เรืองแสง */
-  margin-top: 20px;
-  position: absolute;
-  left: 50%;
-  bottom: -80px;
-  transform: translateX(-50%);
-  transition: all 0.3s;
-}
-
-.cta-button:hover {
-  background: #0ea5e9;
-  box-shadow: 0 0 20px #0ea5e9;
-}
-
-/* --- Gallery Section Styles --- */
 .gallery-section {
   margin-top: 40px;
 }
@@ -225,6 +202,8 @@ body {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  background-color: #f0f0f0;
 }
 
 .gallery-card img {
@@ -238,48 +217,38 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
-  .navbar {
+  
+  .navbar-content {
     flex-direction: column;
     gap: 15px;
+    padding: 15px;
   }
   
+  .nav-left {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .nav-links {
-    display: none; /* ซ่อนเมนูในมือถือชั่วคราว */
+    display: none; 
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-bar input {
+    width: 200px;
   }
 
   .hero-section {
-    height: auto;
-    padding: 40px 20px;
-    text-align: center;
+    height: 250px;
   }
-
-  .hero-text-block h1 {
-    font-size: 40px;
-  }
-  
-  .tagline {
-    position: static;
-    text-align: center;
-  }
-  
-  .cta-button {
-    position: static;
-    transform: none;
-    margin-top: 20px;
-  }
-
-  .nav-links a {
-  text-decoration: none;
-  color: inherit; /* ใช้สีดำตามเดิม */
-}
-.cta-button {
-  text-decoration: none; /* ลบเส้นใต้ของปุ่ม */
-  display: inline-block; /* ให้ปุ่มคงรูปทรงเดิม */
-}
 
   .gallery-grid {
-    grid-template-columns: 1fr; /* เรียงเป็นแนวตั้งในมือถือ */
+    grid-template-columns: 1fr;
   }
 }

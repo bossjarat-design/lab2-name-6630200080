@@ -1,86 +1,83 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link มาใช้แทน <a>
+import { Link } from "react-router-dom"; 
 import "../styles/Home.css";
-import artToyImg from '../assets/art-toy.png';
-import gundamImg from '../assets/gundam.png';
-import dragonImg from '../assets/dragon.png';
+import artToyImg from "../assets/art-toy.png";
+import gundamImg from "../assets/gundam.png";
+import dragonImg from "../assets/dragon.png";
+import bannerImg from "../assets/bannerone.png";
 import { RiShoppingBag3Fill } from "react-icons/ri";
+import { BiSearchAlt } from "react-icons/bi";
 
 function Home() {
   return (
-    <div className="app-container">
-      {/* --- 1. Navigation Bar --- */}
+    <>
+      
       <nav className="navbar">
-        <div className="nav-left">
-          <div className="logo">
-            POLY<span className="logo-red">PLAY</span>
-          </div>
-          <ul className="nav-links">
-            {/* เปลี่ยนจาก <a> เป็น <Link> เพื่อไปหน้า design-plan */}
-            <li><Link to="/design-plan">3D Model Design</Link></li>
-            <li><a href="#">3D Printing Service</a></li>
-            <li><a href="#">Art Toy Painting</a></li>
-            <li><a href="#">Cost Estimator</a></li>
-          </ul>
-        </div>
         
-        <div className="nav-right">
-          <div className="search-bar">
-            <span className="icon-placeholder">🔍</span>
-            <input type="text" placeholder="ค้นหาผลงาน..." />
+        <div className="navbar-content">
+          
+          <div className="nav-left">
+            <div className="logo">
+              <span className="logo-red">POLYPLAY</span>
+            </div>
+            <ul className="nav-links">
+              <li><Link to="/design-plan">3D Model Design</Link></li>
+              <li><a href="#">3D Printing Service</a></li>
+              <li><a href="#">Art Toy Painting</a></li>
+              <li><a href="#">Cost Estimator</a></li>
+            </ul>
           </div>
-          <button className="cart-btn">
-            <RiShoppingBag3Fill className="cart-icon" />
-          </button>
-          <div className="profile-icon">
-            {/* พื้นที่สำหรับ Profile User */}
+
+          <div className="nav-right">
+            <div className="search-bar">
+              <input type="text" placeholder="" />
+              <BiSearchAlt className="search-icon" />
+            </div>
+            <button className="cart-btn">
+              <RiShoppingBag3Fill className="cart-icon" />
+            </button>
+            <div className="profile-icon"></div>
           </div>
+
         </div>
       </nav>
 
-      {/* --- 2. Hero Section (Banner) --- */}
-      <header className="hero-section">
-        <div className="hero-content">
-          <div className="hero-text-block">
-            <h1>TRANSFORM<br />YOUR IDEAS</h1>
-            <p className="subtitle">Custom 3D Model Design Service</p>
-            <p className="tagline">Unleash Your Creativity</p>
-          </div>
-          
-          <div className="hero-image-placeholder">
-            {/* พื้นหลังถูกจัดการใน CSS */}
-          </div>
-
-          {/* เปลี่ยนจาก <button> เป็น <Link> เพื่อให้กดปุ่มใหญ่แล้วเปลี่ยนหน้าได้เหมือนกัน */}
-          <Link to="/design-plan" className="cta-button">
-            START YOUR PROJECT
+      
+      <div className="app-container">
+        
+       
+        <header className="hero-section">
+          <Link to="/design-plan" className="hero-banner-link">
+            <img
+              src={bannerImg}
+              alt="Promotional Banner"
+              className="hero-banner-img"
+            />
           </Link>
-        </div>
-      </header>
+        </header>
 
-      {/* --- 3. Gallery Section --- */}
-      <section className="gallery-section">
-        <h2>ตัวอย่างผลงาน</h2>
-        <div className="gallery-grid">
-          
-          {/* Card 1 */}
-          <div className="gallery-card">
-            <img src={artToyImg} alt="Art Toy Example" />
+        
+        <section className="gallery-section">
+          <h2>ตัวอย่างผลงาน</h2>
+          <div className="gallery-grid">
+            
+            <div className="gallery-card">
+              <img src={artToyImg} alt="Art Toy Example" />
+            </div>
+
+            
+            <div className="gallery-card">
+              <img src={gundamImg} alt="Gundam Model" />
+            </div>
+
+            
+            <div className="gallery-card">
+              <img src={dragonImg} alt="Dragon Model" />
+            </div>
           </div>
-
-          {/* Card 2 */}
-          <div className="gallery-card">
-            <img src={gundamImg} alt="Gundam Model" />
-          </div>
-
-          {/* Card 3 */}
-          <div className="gallery-card">
-            <img src={dragonImg} alt="Dragon Model" />
-          </div>
-
-        </div>
-      </section>
-    </div>
+        </section>
+        
+      </div>
+    </>
   );
 }
 
