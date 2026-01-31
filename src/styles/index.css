@@ -1,0 +1,18 @@
+
+* {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif; 
+  min-height: 100vh;
+  background-color: #ffffff; 
+}
+
+/* ทำให้รูปภาพไม่ล้นจอ */
+img {
+  max-width: 100%;
+  display: block;
+}
